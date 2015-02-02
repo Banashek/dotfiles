@@ -1,0 +1,10 @@
+[user]
+	name = Jonathan Banashek
+	email = jbanashek@gmail.com
+[alias]
+	co = checkout
+[core]
+[core]
+	editor = vim
+	autocrlf = input
+	safecrlf = true
