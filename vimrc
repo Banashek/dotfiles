@@ -55,7 +55,9 @@ nnoremap <leader>er :Etask<CR>
 " Fugitive
 nnoremap <leader>gs :Gstatus<CR><c-w><c-w>
 nnoremap <leader>ga :Git add %:p<CR><CR>
-nnoremap <leader>gc :Gcommit -v -q<CR>
+nnoremap <leader>gc :Gcommit<CR>
+nnoremap <leader>gps :Gpush<CR>
+nnoremap <leader>gpl :Gpull<CR>
 
 " Vim-OSX-ColorPicker
 nnoremap <leader>cpr :ColorHEX<CR>
