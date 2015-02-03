@@ -1,10 +1,41 @@
 [user]
 	name = Jonathan Banashek
 	email = jbanashek@gmail.com
-[alias]
-	co = checkout
-[core]
 [core]
 	editor = vim
 	autocrlf = input
 	safecrlf = true
+[color]
+  ui = true
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red
+  new = green
+[alias]
+	a = add
+	b = branch -v
+	c = commit -m
+	co = checkout
+	d = diff
+	dc = diff --cached
+	dh = diff HEAD^
+	nb = checkout -b
+	pl = pull
+	ps = push
+	s = status
+[format]
+  pretty = format:%C(blue)%ad%Creset %C(yellow)%h%C(green)%d%Creset %C(blue)%s %C(magenta) [%an]%Creset
+[mergetool]
+  prompt = false
+[mergetool "mvimdiff"]
+  cmd="mvim -c 'Gdiff' $MERGED"     # use fugitive.vim for 3-way merge
+  keepbackup=false
+[merge]
+  summary = true
+  verbosity = 1
+  tool = mvimdiff

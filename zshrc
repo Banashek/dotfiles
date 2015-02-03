@@ -30,3 +30,4 @@ alias trc="vim ~/.tmux.conf"
 alias blist="vim ~/gtd/projects/blog/list"
  # Others
 alias cls="clear"
+alias g="git"
