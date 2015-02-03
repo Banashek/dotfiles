@@ -7,29 +7,27 @@ set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-Plugin 'gmarik/Vundle.vim'          " Vundle
-Plugin 'tpope/vim-fugitive'         " Vim-Fugitive
-Plugin 'SirVer/ultisnips'           " UltiSnips
-Plugin 'honza/vim-snippets'         " Vim-Snippets
-Plugin 'Valloric/YouCompleteMe'     " YouCompleteMe
-Plugin 'kien/ctrlp.vim'             " Ctrl-P
-Plugin 'scrooloose/nerdtree'        " NerdTree
-Plugin 'scrooloose/nerdcommenter' 	" NerdCommenter
-Plugin 'scrooloose/syntastic'       " Syntastic
-Plugin 'mattn/emmet-vim'            " Emmet
-Plugin 'godlygeek/tabular'          " Tabular
-Plugin 'OrangeT/vim-csharp'         " Vim-CSharp
-Plugin 'tpope/vim-dispatch'         " Vim-Dispatch
-Plugin 'pangloss/vim-javascript'    " Vim-Javascript
-Plugin 'vim-ruby/vim-ruby'          " Vim-Ruby
-Plugin 'tpope/vim-rails'            " Vim-Rails
-Plugin 'iandoe/vim-osx-colorpicker' " Vim-OSX-ColorPicker
-Plugin 'tpope/vim-surround'         " Vim-Surround
-Plugin 'bling/vim-airline' 			" Vim-Airline
-Plugin 'Lokaltog/vim-easymotion' 	" Vim-EasyMotion
-Plugin 'klen/python-mode' 			" Python-Mode
-Plugin 'Yggdroot/indentLine' 		" Indent-Line
-Plugin 'JarrodCTaylor/vim-python-test-runner' " Python test runner
+Plugin 'gmarik/Vundle.vim'						" Vundle
+Plugin 'altercation/vim-colors-solarized'		" Solarized Theme
+Plugin 'tpope/vim-fugitive'						" Vim-Fugitive
+Plugin 'SirVer/ultisnips'						" UltiSnips
+Plugin 'honza/vim-snippets'						" Vim-Snippets
+Plugin 'Valloric/YouCompleteMe'					" YouCompleteMe
+Plugin 'kien/ctrlp.vim'							" Ctrl-P
+Plugin 'scrooloose/nerdtree'					" NerdTree
+Plugin 'scrooloose/nerdcommenter'				" NerdCommenter
+Plugin 'scrooloose/syntastic'					" Syntastic
+Plugin 'mattn/emmet-vim'						" Emmet
+Plugin 'godlygeek/tabular'						" Tabular
+Plugin 'tpope/vim-dispatch'						" Vim-Dispatch
+Plugin 'pangloss/vim-javascript'				" Vim-Javascript
+Plugin 'vim-ruby/vim-ruby'						" Vim-Ruby
+Plugin 'tpope/vim-rails'						" Vim-Rails
+Plugin 'iandoe/vim-osx-colorpicker'				" Vim-OSX-ColorPicker
+Plugin 'tpope/vim-surround'						" Vim-Surround
+Plugin 'bling/vim-airline'						" Vim-Airline
+Plugin 'Lokaltog/vim-easymotion'				" Vim-EasyMotion
+Plugin 'Yggdroot/indentLine'					" Indent-Line
 Plugin 'Raimondi/delimitMate' 					" DeliMate	
 call vundle#end()
 filetype plugin indent on
@@ -68,21 +66,6 @@ map <Leader>k <Plug>(easymotion-k)
 nmap s <Plug>(easymotion-s)
 let g:EasyMotion_smartcase = 1
 
-" Python-Test-Runner
-nnoremap<Leader>da :DjangoTestApp<CR>
-nnoremap<Leader>df :DjangoTestFile<CR>
-nnoremap<Leader>dc :DjangoTestClass<CR>
-nnoremap<Leader>dm :DjangoTestMethod<CR>
-nnoremap<Leader>nf :NosetestFile<CR>
-nnoremap<Leader>nc :NosetestClass<CR>
-nnoremap<Leader>nm :NosetestMethod<CR>
-nnoremap<Leader>nb :NosetestBaseMethod<CR>
-nnoremap<Leader>nr :RerunLastTests<CR>
-
-" Pymode
-"  fix auto-showing of documentation which breaks ultisnips
-set completeopt=menu
-
 " Delimate
 imap<leader><CR> <Plug>delimitMateJumpMany
 imap<leader>,. <Plug>delimitMateS-Tab
@@ -98,10 +81,14 @@ set number
 set relativenumber
 autocmd FileType ruby compiler ruby
 set tabstop=4 softtabstop=0 noexpandtab shiftwidth=4
-nnoremap <leader>src :source %<CR>
+nnoremap <leader>src :source %<CR> 
 nnoremap <leader>sv <c-w>H
 nnoremap <leader>sh <c-w>K
 nnoremap <leader>on :only<CR>
+noremap <leader>y "*y
+noremap <leader>yy "*Y
+" Pasting from clipboard
+noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
 map Q :qa!<CR>
 	" GTD maps
 		" gtd mark item complete (single line, then visual)
@@ -109,5 +96,3 @@ nnoremap <leader>ic dd<c-w>lggp<c-w>h
 vnoremap <leader>ic d<c-w>lggp<c-w>h
 		" gtd quit
 nnoremap <leader>gq :wa<CR>:qa<CR>
-
-

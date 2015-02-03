@@ -3,19 +3,16 @@ export PATH="$PATH:$HOME/.rvm/bin" 			# Ruby Version Manager
 export PATH="/usr/local/heroku/bin:$PATH"	# Heroku Toolbelt
 export PATH="/usr/local/bin/python3:$PATH"	# Python 3
 
+export EDITOR="vim"
 # Set vi mode
 bindkey -v
 export KEYTIMEOUT=1
 
-# Oh-my-zsh settings
-export ZSH=$HOME/.oh-my-zsh
-export DEFAULT_USER="Jon"
-ZSH_THEME="agnoster"
-plugins=(osx battery)
-export PATH=$HOME/bin:/usr/local/bin:$PATH
-source $ZSH/oh-my-zsh.sh
-
 # My Aliases
+ # ls changes
+alias la="ls -laGF"
+alias ls="ls -GF"
+alias ll="ls -lGF"
  # Frequently use locations
 alias blog="cd /Users/jonbanashek/Projects/octopress/"
 alias gtd="vim -O ~/gtd/list ~/gtd/log"
