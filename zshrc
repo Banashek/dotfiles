@@ -3,9 +3,9 @@ export PATH="$PATH:$HOME/.rvm/bin" 			# Ruby Version Manager
 export PATH="/usr/local/heroku/bin:$PATH"	# Heroku Toolbelt
 export PATH="/usr/local/bin/python3:$PATH"	# Python 3
 
-export EDITOR="vim"
 # Set vi mode
 bindkey -v
+export EDITOR="vim"
 export KEYTIMEOUT=1
 
 # My Aliases
@@ -28,6 +28,41 @@ alias zrc="vim ~/.zshrc"
 alias vrc="vim ~/.vimrc"
 alias trc="vim ~/.tmux.conf"
 alias blist="vim ~/gtd/projects/blog/list"
+# Bundler
+alias b="bundle"
  # Others
 alias cls="clear"
 alias g="git"
+alias mkdir='mkdir -p'
+
+# modify the prompt to contain git branch name if applicable
+git_prompt_info() {
+  current_branch=$(git cb 2> /dev/null)
+  if [[ -n $current_branch ]]; then
+    echo " %{$fg_bold[green]%}%{$current_branch%}%{$reset_color%}"
+  fi
+}
+setopt promptsubst
+export PS1='${SSH_CONNECTION+"%{$fg_bold[green]%}%n@%m:"}%{$fg_bold[blue]%}%c%{$reset_color%}$(git_prompt_info) %# '
+
+# completion
+autoload -U compinit
+compinit
+
+# makes color constants available
+autoload -U colors
+colors
+
+# enable colored output from ls, etc
+export CLICOLOR=1
+
+# history settings
+setopt hist_ignore_all_dups inc_append_history
+HISTFILE=~/.zhistory
+HISTSIZE=4096
+SAVEHIST=4096
+
+# Make directory and change into it.
+function mcd() {
+  mkdir -p "$1" && cd "$1";
+}
