@@ -97,9 +97,15 @@ syntax on
 
 " Colors
 colorscheme vividchalk
+set background=dark
+
+" Searching
 hi Search cterm=NONE ctermfg=black ctermbg=yellow
 set hlsearch
-set background=dark
+set incsearch
+set ignorecase
+set smartcase
+nnoremap <leader>noh :noh<CR> 
 
 " Numbering
 set number
@@ -142,3 +148,6 @@ nnoremap <leader>ic dd<c-w>lggp<c-w>h
 vnoremap <leader>ic d<c-w>lggp<c-w>h
 		" gtd quit
 nnoremap <leader>gq :wa<CR>:qa<CR>
+
+" Display tabs and trailing spaces visually
+set list listchars=tab:\ \ ,trail:·
