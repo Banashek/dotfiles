@@ -24,6 +24,7 @@
 	d = diff
 	dc = diff --cached
 	dh = diff HEAD^
+	l = log
 	nb = checkout -b
 	pl = pull
 	ps = push
