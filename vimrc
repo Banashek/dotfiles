@@ -52,6 +52,11 @@ nnoremap <leader>el :Elayout<CR>
 nnoremap <leader>es :Estylesheet<CR>
 nnoremap <leader>er :Etask<CR>
 
+" Fugitive
+nnoremap <leader>gs :Gstatus<CR><c-w><c-w>
+nnoremap <leader>ga :Git add %:p<CR><CR>
+nnoremap <leader>gc :Gcommit -v -q<CR>
+
 " Vim-OSX-ColorPicker
 nnoremap <leader>cpr :ColorHEX<CR>
 
@@ -138,8 +143,12 @@ noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
 nnoremap <leader>od <c-w><c-w><c-d><c-w><c-w>
 nnoremap <leader>ou <c-w><c-w><c-u><c-w><c-w>
 
+" Get help as a vertical split
+nnoremap <leader>h :vert help
+
 " Save and quit maps
 nnoremap <leader>sa :w<CR>
+nnoremap <leader>wq :wq<CR>
 map Q :qa!<CR>
 
 " GTD maps
@@ -151,3 +160,10 @@ nnoremap <leader>gq :wa<CR>:qa<CR>
 
 " Display tabs and trailing spaces visually
 set list listchars=tab:\ \ ,trail:·
+
+" Swap between last file and current file
+nnoremap <leader>lf <c-^>
+
+" Open new split panes to right and bottom, which feels more natural
+set splitbelow
+set splitright
