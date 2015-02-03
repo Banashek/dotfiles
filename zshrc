@@ -26,4 +26,7 @@ alias pi="pip3"
 alias brc="vim ~/.bashrc"
 alias zrc="vim ~/.zshrc"
 alias vrc="vim ~/.vimrc"
+alias trc="vim ~/.tmux.conf"
 alias blist="vim ~/gtd/projects/blog/list"
+ # Others
+alias cls="clear"

@@ -1,3 +1,9 @@
-A place for me to store my dotfiles based on the blogpost found at: http://blog.sanctum.geek.nz/managing-dot-files-with-git/
+A place for me to store my dotfiles 
 
-Careful if you use the vimrc, it uses some weird inoremap leader space stuff because i like using space as a leader for snippet jumping, but most people with be bothered by the way it makes insert mode operate
+Most of this is stuff I've taken from over the years from random places.
+
+Credit to the following for being resources used by my dotfiles:
+	* http://blog.sanctum.geek.nz/managing-dot-files-with-git/
+	* http://www.drbunsen.org/the-text-triumvirate/
+	* https://github.com/thoughtbot/dotfiles
+	* https://github.com/skwp/dotfiles/

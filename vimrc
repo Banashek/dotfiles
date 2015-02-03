@@ -1,4 +1,4 @@
-" Leader
+" Leader (done at the beginning so remaps will pick it up)
 nnoremap <SPACE> <Nop>
 let mapleader=" "
 
@@ -32,9 +32,27 @@ Plugin 'Raimondi/delimitMate' 					" DeliMate
 call vundle#end()
 filetype plugin indent on
 
-let g:ycm_server_keep_logfiles = 1
+" Vim-Rails
+nnoremap <leader>af :A<CR>
+nnoremap <leader>av :AV<CR>
+nnoremap <leader>rf :R<CR>
+nnoremap <leader>rv :RV<CR>
+nnoremap <leader>rk :Rake<CR>
+nnoremap <leader>re :Rextract 
+vnoremap <leader>re :Rextract 
+nnoremap <leader>ec :Econtroller<CR>
+nnoremap <leader>em :Emodel<CR>
+nnoremap <leader>et :Eunittest<CR>
+nnoremap <leader>ef :Efunctionaltest<CR>
+nnoremap <leader>ev :Eview<CR>
+nnoremap <leader>en :Eenvironment<CR>
+nnoremap <leader>eh :Ehelper<CR>
+nnoremap <leader>ej :Ejavascript<CR>
+nnoremap <leader>el :Elayout<CR>
+nnoremap <leader>es :Estylesheet<CR>
+nnoremap <leader>er :Etask<CR>
+
 " Vim-OSX-ColorPicker
-nnoremap <leader>cph :ColorHEX<CR>
 nnoremap <leader>cpr :ColorHEX<CR>
 
 " UltiSnips
@@ -60,7 +78,7 @@ let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 set laststatus=2
 
 " Vim-EasyMotion
-map <Leader>w <Plug>(easymotion-w)
+map <Leader>e <Plug>(easymotion-w)
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
 nmap s <Plug>(easymotion-s)
@@ -70,28 +88,56 @@ let g:EasyMotion_smartcase = 1
 imap<leader><CR> <Plug>delimitMateJumpMany
 imap<leader>,. <Plug>delimitMateS-Tab
 
-" My Edits
+"""""""""""""""""""""
+"""""""" Non Plugin "
+""""""""""""""""""""" 
+
 syntax enable
 syntax on
-set hlsearch
-set background=dark
+
+" Colors
 colorscheme vividchalk
 hi Search cterm=NONE ctermfg=black ctermbg=yellow
+set hlsearch
+set background=dark
+
+" Numbering
 set number
 set relativenumber
+
+" Autospacing
 autocmd FileType ruby compiler ruby
 set tabstop=4 softtabstop=0 noexpandtab shiftwidth=4
+
+" Fast reload when tweaking vimrc
 nnoremap <leader>src :source %<CR> 
+
+" Changing/removing splits
 nnoremap <leader>sv <c-w>H
 nnoremap <leader>sh <c-w>K
 nnoremap <leader>on :only<CR>
+
+" Navigating splits
+nnoremap <leader>wh <c-w>h
+nnoremap <leader>wj <c-w>j
+nnoremap <leader>wk <c-w>k
+nnoremap <leader>wl <c-w>l
+
+" Make copy/paste not suck
 noremap <leader>y "*y
 noremap <leader>yy "*Y
-" Pasting from clipboard
 noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
+
+" Mimic emacs scroll other window down
+nnoremap <leader>od <c-w><c-w><c-d><c-w><c-w>
+nnoremap <leader>ou <c-w><c-w><c-u><c-w><c-w>
+
+" Save and quit maps
+nnoremap <leader>sa :w<CR>
 map Q :qa!<CR>
-	" GTD maps
-		" gtd mark item complete (single line, then visual)
+
+" GTD maps
+" gtd mark item complete (single line, then visual)
 nnoremap <leader>ic dd<c-w>lggp<c-w>h
 vnoremap <leader>ic d<c-w>lggp<c-w>h
 		" gtd quit
