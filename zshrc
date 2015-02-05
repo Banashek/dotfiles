@@ -2,6 +2,7 @@
 export PATH="$PATH:$HOME/.rvm/bin" 			# Ruby Version Manager
 export PATH="/usr/local/heroku/bin:$PATH"	# Heroku Toolbelt
 export PATH="/usr/local/bin/python3:$PATH"	# Python 3
+export PATH=$PATH:"/usr/local/opt/go/libexec/bin" # Go brew stuff
 
 # Set vi mode
 bindkey -v
@@ -48,6 +49,8 @@ export PS1='${SSH_CONNECTION+"%{$fg_bold[green]%}%n@%m:"}%{$fg_bold[blue]%}%c%{$
 # completion
 autoload -U compinit
 compinit
+setopt completeinword
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
 # makes color constants available
 autoload -U colors
