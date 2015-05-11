@@ -26,31 +26,40 @@ Plugin 'tpope/vim-rails'						" Vim-Rails
 Plugin 'iandoe/vim-osx-colorpicker'				" Vim-OSX-ColorPicker
 Plugin 'tpope/vim-surround'						" Vim-Surround
 Plugin 'bling/vim-airline'						" Vim-Airline
+Plugin 'tpope/vim-markdown'						" Vim-Markdown
+Plugin 'hail2u/vim-css3-syntax'					" Vim-CSS3-Sytax
 Plugin 'Lokaltog/vim-easymotion'				" Vim-EasyMotion
 Plugin 'Yggdroot/indentLine'					" Indent-Line
 Plugin 'Raimondi/delimitMate' 					" DeliMate	
+Plugin 'fatih/vim-go'							" Vim-GO
+Plugin 'tpope/vim-leiningen'					" Leiningen for clojure
+Plugin 'tpope/vim-fireplace'					" More clojure support
+Plugin 'guns/vim-clojure-static'				" ^
+Plugin 'guns/vim-clojure-highlight'				" ^
+Plugin 'kien/rainbow_parentheses.vim'			" ^
+Plugin 'vim-latex/vim-latex'					" Latex
 call vundle#end()
 filetype plugin indent on
 
 " Vim-Rails
-nnoremap <leader>af :A<CR>
-nnoremap <leader>av :AV<CR>
-nnoremap <leader>rf :R<CR>
-nnoremap <leader>rv :RV<CR>
-nnoremap <leader>rk :Rake<CR>
-nnoremap <leader>re :Rextract 
-vnoremap <leader>re :Rextract 
-nnoremap <leader>ec :Econtroller<CR>
-nnoremap <leader>em :Emodel<CR>
-nnoremap <leader>et :Eunittest<CR>
-nnoremap <leader>ef :Efunctionaltest<CR>
-nnoremap <leader>ev :Eview<CR>
-nnoremap <leader>en :Eenvironment<CR>
-nnoremap <leader>eh :Ehelper<CR>
-nnoremap <leader>ej :Ejavascript<CR>
-nnoremap <leader>el :Elayout<CR>
-nnoremap <leader>es :Estylesheet<CR>
-nnoremap <leader>er :Etask<CR>
+" nnoremap <leader>af :A<CR>
+" nnoremap <leader>av :AV<CR>
+" nnoremap <leader>rf :R<CR>
+" nnoremap <leader>rv :RV<CR>
+" nnoremap <leader>rk :Rake<CR>
+" nnoremap <leader>re :Rextract 
+" vnoremap <leader>re :Rextract 
+" nnoremap <leader>ec :Econtroller<CR>
+" nnoremap <leader>em :Emodel<CR>
+" nnoremap <leader>et :Eunittest<CR>
+" nnoremap <leader>ef :Efunctionaltest<CR>
+" nnoremap <leader>ev :Eview<CR>
+" nnoremap <leader>en :Eenvironment<CR>
+" nnoremap <leader>eh :Ehelper<CR>
+" nnoremap <leader>ej :Ejavascript<CR>
+" nnoremap <leader>el :Elayout<CR>
+" nnoremap <leader>es :Estylesheet<CR>
+" nnoremap <leader>er :Etask<CR>
 
 " Fugitive
 nnoremap <leader>gs :Gstatus<CR><c-w><c-w>

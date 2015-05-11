@@ -15,8 +15,9 @@ alias la="ls -laGF"
 alias ls="ls -GF"
 alias ll="ls -lGF"
  # Frequently use locations
-alias blog="cd /Users/jonbanashek/Projects/octopress/"
+alias blog="cd /Users/jonbanashek/Projects/jekyll/banashek.github.io/"
 alias gtd="vim -O ~/gtd/list ~/gtd/log"
+alias macros="vim ~/gtd/macros"
 alias svn="msvn"
 alias gitfuckit='git clean -d -x -f; git reset --hard'
 alias gitrmf='git rm $(git ls-files --deleted)'
@@ -34,7 +35,9 @@ alias b="bundle"
  # Others
 alias cls="clear"
 alias g="git"
+alias gam="git commit -am"
 alias mkdir='mkdir -p'
+alias json="python -m json.tool"
 
 # modify the prompt to contain git branch name if applicable
 git_prompt_info() {
@@ -45,6 +48,17 @@ git_prompt_info() {
 }
 setopt promptsubst
 export PS1='${SSH_CONNECTION+"%{$fg_bold[green]%}%n@%m:"}%{$fg_bold[blue]%}%c%{$reset_color%}$(git_prompt_info) %# '
+
+# Visual studio code
+code () {
+    if [[ $# = 0 ]]
+    then
+        open -a "Visual Studio Code"
+    else
+        [[ $1 = /* ]] && F="$1" || F="$PWD/${1#./}"
+        open -a "Visual Studio Code" --args "$F"
+    fi
+}
 
 # completion
 autoload -U compinit
@@ -69,3 +83,6 @@ SAVEHIST=4096
 function mcd() {
   mkdir -p "$1" && cd "$1";
 }
+
+# DNVM
+source dnvm.sh
