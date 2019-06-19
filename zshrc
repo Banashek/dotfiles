@@ -1,54 +1,36 @@
-# Path Manipulation
-export PATH="$PATH:$HOME/.rvm/bin" 			# Ruby Version Manager
-export PATH="/usr/local/heroku/bin:$PATH"	# Heroku Toolbelt
-export PATH="/usr/local/bin/python3:$PATH"	# Python 3
-export PATH=$PATH:"/usr/local/opt/go/libexec/bin" # Go brew stuff
-
-# Set vi mode
 bindkey -v
-export EDITOR="vim"
+export EDITOR="nvim"
 export KEYTIMEOUT=1
-
-# My Aliases
- # ls changes
 alias la="ls -laGF"
 alias ls="ls -GF"
 alias ll="ls -lGF"
- # Frequently use locations
-alias blog="cd /Users/jonbanashek/Projects/jekyll/banashek.github.io/"
-alias gtd="vim -O ~/gtd/list ~/gtd/log"
-alias macros="vim ~/gtd/macros"
-alias svn="msvn"
-alias gitfuckit='git clean -d -x -f; git reset --hard'
-alias gitrmf='git rm $(git ls-files --deleted)'
- # Python 3 binaries
-alias py="python3"
-alias pi="pip3"
- # Quick open files in vim
-alias brc="vim ~/.bashrc"
-alias zrc="vim ~/.zshrc"
-alias vrc="vim ~/.vimrc"
+alias v="nvim"
+alias vim="nvim"
+alias nvimdiff="nvim -d"
+alias vrc="vim ~/.config/nvim/init.vim"
+alias zrc="vim ~/.oh-my-zsh/custom/mycfg.zsh"
 alias trc="vim ~/.tmux.conf"
-alias blist="vim ~/gtd/projects/blog/list"
-# Bundler
-alias b="bundle"
- # Others
+alias srcz="source ~/.oh-my-zsh/custom/mycfg.zsh"
+alias eng="cd ~/code/RedoxEngine"
+alias srv="cd ~/code/redox-services"
+alias mr="cd ~/code/redox-services"
+alias util="cd ~/code/util"
 alias cls="clear"
 alias g="git"
+alias gs="git status"
 alias gam="git commit -am"
-alias mkdir='mkdir -p'
-alias json="python -m json.tool"
-
-# modify the prompt to contain git branch name if applicable
-git_prompt_info() {
-  current_branch=$(git cb 2> /dev/null)
-  if [[ -n $current_branch ]]; then
-    echo " %{$fg_bold[green]%}%{$current_branch%}%{$reset_color%}"
-  fi
+alias gcm="git commit -m"
+alias lx="lynx -cookies=off -lss='~/.config/lynx/lynx.lss' -cfg='~/.config/lynx/lynx.cfg' -useragent='Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.85 Safari/537.36'"
+setopt hist_ignore_all_dups inc_append_history
+HISTFILE=~/.zhistory
+HISTSIZE=4096
+SAVEHIST=4096
+function mcd() {
+  mkdir -p "$1" && cd "$1";
 }
-setopt promptsubst
-export PS1='${SSH_CONNECTION+"%{$fg_bold[green]%}%n@%m:"}%{$fg_bold[blue]%}%c%{$reset_color%}$(git_prompt_info) %# '
-
+function ngrep() {
+	grep -r --exclude-dir node_modules --exclude-dir bower_components $1 .
+}
 # Visual studio code
 code () {
     if [[ $# = 0 ]]
@@ -59,30 +41,8 @@ code () {
         open -a "Visual Studio Code" --args "$F"
     fi
 }
-
-# completion
-autoload -U compinit
-compinit
-setopt completeinword
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
-
-# makes color constants available
-autoload -U colors
-colors
-
-# enable colored output from ls, etc
-export CLICOLOR=1
-
-# history settings
-setopt hist_ignore_all_dups inc_append_history
-HISTFILE=~/.zhistory
-HISTSIZE=4096
-SAVEHIST=4096
-
-# Make directory and change into it.
-function mcd() {
-  mkdir -p "$1" && cd "$1";
-}
-
-# DNVM
-source dnvm.sh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+eval "$(pyenv init -)"
+export PATH="$PATH:~/bin/"
+. /usr/local/opt/asdf/asdf.sh
+#. $(brew --prefix asdf)/.asdf/completions/asdf.bash
